@@ -1,6 +1,7 @@
 import phonenumbers
 from phonenumbers import carrier, geocoder, timezone
 from opencage.geocoder import OpenCageGeocode
+import folium
 
 number = input('Enter a mobile number with country code: ')
 number = phonenumbers.parse(number)
@@ -20,7 +21,7 @@ print(timezone.time_zones_for_number(number))
 print(carrier.name_for_number(number, "en"))
 
 #making sure it's a valid number
-print("Valid movile number: ", phonenumbers.is_valid_number(number))
+print("Valid mobile number: ", phonenumbers.is_valid_number(number))
 
 
 #lat & lon coordinates for number
@@ -33,3 +34,9 @@ results = geocoder.geocode(query)
 lat = results[0]['geometry']['lat']
 lon = results[0]['geometry']['lng']
 print(lat, lon)
+
+#map
+myMap = folium.Map(location=[lat,lon], zoom_start=9)
+folium.Marker([lat, lon], popup=country_location).add_to((myMap))
+
+myMap.save("myMap.html")
