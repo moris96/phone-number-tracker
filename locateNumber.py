@@ -7,7 +7,7 @@ number = input('Enter a mobile number with country code: ')
 number = phonenumbers.parse(number)
 
 #geocoder API key for lat & lon coordinates
-key = '1a6118c1609e49adb09e7cb3119d6909'
+key = '{insert your API Key here}'
 
 
 #US state where the number is from, or province and etc for non-US countries
