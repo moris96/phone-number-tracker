@@ -1,6 +1,6 @@
 # phone-number-tracker is in development 
 
-### pip install phonenumbers ; pip install opencage 
+### pip install phonenumbers ; pip install opencage ; pip install folium 
 
 #### enter a mobile number with the country code like +1 (USA) at the beginning
 
